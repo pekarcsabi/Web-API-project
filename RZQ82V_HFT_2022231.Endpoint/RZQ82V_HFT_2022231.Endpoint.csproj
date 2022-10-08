@@ -1,7 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RZQ82V_HFT_2022231.Logic\RZQ82V_HFT_2022231.Logic.csproj" />
+    <ProjectReference Include="..\RZQ82V_HFT_2022231.Models\RZQ82V_HFT_2022231.Models.csproj" />
+    <ProjectReference Include="..\RZQ82V_HFT_2022231.Repository\RZQ82V_HFT_2022231.Repository.csproj" />
+  </ItemGroup>
 
 </Project>
