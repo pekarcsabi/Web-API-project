@@ -5,6 +5,10 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RZQ82V_HFT_2022231.Models", "RZQ82V_HFT_2022231.Models\RZQ82V_HFT_2022231.Models.csproj", "{1072A0CC-87D2-4F8A-A720-EF08F7521902}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RZQ82V_HFT_2022231.Logic", "RZQ82V_HFT_2022231.Logic\RZQ82V_HFT_2022231.Logic.csproj", "{AFEB3A8B-0CFD-43B3-BAAD-58B15EFD13FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RZQ82V_HFT_2022231.Repository", "RZQ82V_HFT_2022231.Repository\RZQ82V_HFT_2022231.Repository.csproj", "{4D510A1B-E3B1-422D-8E4F-842B2EA8C183}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{1072A0CC-87D2-4F8A-A720-EF08F7521902}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1072A0CC-87D2-4F8A-A720-EF08F7521902}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1072A0CC-87D2-4F8A-A720-EF08F7521902}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFEB3A8B-0CFD-43B3-BAAD-58B15EFD13FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFEB3A8B-0CFD-43B3-BAAD-58B15EFD13FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFEB3A8B-0CFD-43B3-BAAD-58B15EFD13FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFEB3A8B-0CFD-43B3-BAAD-58B15EFD13FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D510A1B-E3B1-422D-8E4F-842B2EA8C183}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D510A1B-E3B1-422D-8E4F-842B2EA8C183}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D510A1B-E3B1-422D-8E4F-842B2EA8C183}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D510A1B-E3B1-422D-8E4F-842B2EA8C183}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
