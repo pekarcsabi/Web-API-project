@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RZQ82V_HFT_2022231.Logic", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RZQ82V_HFT_2022231.Repository", "RZQ82V_HFT_2022231.Repository\RZQ82V_HFT_2022231.Repository.csproj", "{4D510A1B-E3B1-422D-8E4F-842B2EA8C183}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RZQ82V_HFT_2022231.Test", "RZQ82V_HFT_2022231.Test\RZQ82V_HFT_2022231.Test.csproj", "{27E8BE9B-C3E0-4AB4-B131-674EFBBB0AA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{4D510A1B-E3B1-422D-8E4F-842B2EA8C183}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D510A1B-E3B1-422D-8E4F-842B2EA8C183}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D510A1B-E3B1-422D-8E4F-842B2EA8C183}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27E8BE9B-C3E0-4AB4-B131-674EFBBB0AA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27E8BE9B-C3E0-4AB4-B131-674EFBBB0AA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27E8BE9B-C3E0-4AB4-B131-674EFBBB0AA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27E8BE9B-C3E0-4AB4-B131-674EFBBB0AA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
