@@ -18,7 +18,7 @@ namespace RZQ82V_HFT_2022231.Models
         {
 
         }
-        public Company(string line)
+        public Company(string line) //Name#Income#NumOfPlanes
         {
             string[] split = line.Split('#');
             Name = split[0];
