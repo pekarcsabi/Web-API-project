@@ -14,12 +14,13 @@ namespace RZQ82V_HFT_2022231.Models
         [Column("PlaneId")]
         public string Type { get; set; }
         [Required]
-        [Range(2, 550)]
+        [Range(2, 600)]
         public int NumOfSeats { get; set; }
         [Required]
         public int YearOfCreate { get; set; }
         public virtual ICollection<AirPort> AirPorts { get; set; }
         public virtual ICollection<Company> Companies { get; set; }
+        public virtual ICollection<Flight> Flights { get; set; }
         public Plane()
         {
 

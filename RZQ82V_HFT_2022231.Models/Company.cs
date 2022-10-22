@@ -20,6 +20,7 @@ namespace RZQ82V_HFT_2022231.Models
         public int NumOfPlanes { get; set; }
         public virtual ICollection<Plane> Planes { get; set; }
         public virtual ICollection<AirPort> AirPorts { get; set; }
+        public virtual ICollection<Flight> Flights { get; set; }
         public Company()
         {
 
