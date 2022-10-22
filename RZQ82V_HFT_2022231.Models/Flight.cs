@@ -13,12 +13,16 @@ namespace RZQ82V_HFT_2022231.Models
         [Required]
         public DateTime When { get; set; }
         [Required]
+        [StringLength(240)]
         public string From { get; set; }
         [Required]
+        [StringLength(240)]
         public string To { get; set; }
         [Required]
+        [StringLength(240)]
         public string CompanyName { get; set; }
         [Required]
+        [StringLength(240)]
         public string PlaneType { get; set; }
         public Flight()
         {

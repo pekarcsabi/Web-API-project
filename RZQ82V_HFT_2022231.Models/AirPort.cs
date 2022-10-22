@@ -11,7 +11,7 @@ namespace RZQ82V_HFT_2022231.Models
         [Required]
         public int AirPortId { get; set; }
         [Required]
-        [StringLength(10)]
+        [StringLength(240)]
         public string Location { get; set; }
         [Required]
         public int CapacityOfPlanes { get; set; }

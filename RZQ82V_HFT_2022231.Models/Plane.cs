@@ -9,7 +9,7 @@ namespace RZQ82V_HFT_2022231.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
-        [StringLength(10)]
+        [StringLength(240)]
         public string Type { get; set; }
         [Required]
         [Range(2, 550)]
