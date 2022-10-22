@@ -24,6 +24,10 @@ namespace RZQ82V_HFT_2022231.Models
         [Required]
         [StringLength(240)]
         public string PlaneType { get; set; }
+
+        public virtual Plane Plane { get; set; }
+        public virtual AirPort AirPort { get; set; }
+        public virtual Company Company { get; set; } 
         public Flight()
         {
 

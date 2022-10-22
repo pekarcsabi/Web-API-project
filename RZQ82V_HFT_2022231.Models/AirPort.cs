@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -15,6 +16,8 @@ namespace RZQ82V_HFT_2022231.Models
         public string Location { get; set; }
         [Required]
         public int CapacityOfPlanes { get; set; }
+        public virtual ICollection<Company> Companies { get; set; }
+        public virtual ICollection<Plane> Planes { get; set; }
         public AirPort()
         {
 
