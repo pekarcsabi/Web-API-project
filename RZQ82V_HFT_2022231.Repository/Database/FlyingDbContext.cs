@@ -25,10 +25,10 @@ namespace RZQ82V_HFT_2022231.Repository
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Flight>()
-                .HasOne(x => x.Company)
-                .WithMany(company => company.Flights)
-                .HasForeignKey(r => r.CompanyName)
+            modelBuilder.Entity<Flight>(flight => flight)
+                .HasOne<Company>
+                .WithMany()
+                .HasForeignKey(flight => flight.)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Flight>()

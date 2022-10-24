@@ -13,17 +13,13 @@ namespace RZQ82V_HFT_2022231.Models
         [Required]
         public DateTime When { get; set; }
         [Required]
-        [StringLength(240)]
-        public string From { get; set; }
+        public int FromId { get; set; }
         [Required]
-        [StringLength(240)]
-        public string To { get; set; }
+        public int ToId { get; set; }
         [Required]
-        [StringLength(240)]
-        public string CompanyName { get; set; }
+        public int CompanyId { get; set; }
         [Required]
-        [StringLength(240)]
-        public string PlaneType { get; set; }
+        public int PlaneId { get; set; }
 
         public virtual Plane Plane { get; set; }
         public virtual AirPort AirPort { get; set; }
@@ -37,10 +33,10 @@ namespace RZQ82V_HFT_2022231.Models
             string[] split = line.Split('#');
             FlightId = int.Parse(split[0]);
             When = DateTime.Parse(split[1].Replace('#', '*'));
-            From = split[2];
-            To = split[3];
-            CompanyName = split[4];
-            PlaneType = split[5];
+            FromId = int.Parse(split[2]);
+            ToId = int.Parse(split[3]);
+            CompanyId = int.Parse(split[4]);
+            PlaneId = int.Parse(split[5]);
         }
 
     }
