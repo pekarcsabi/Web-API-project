@@ -29,9 +29,10 @@ namespace RZQ82V_HFT_2022231.Models
         public Plane(string line)  //Type#NumOfSeats#YearOfCreate
         {
             string[] split = line.Split('#');
-            Type = split[0];
-            NumOfSeats = int.Parse(split[1]);
-            YearOfCreate = int.Parse(split[2]);
+            PlaneId = int.Parse(split[0]);
+            Type = split[1];
+            NumOfSeats = int.Parse(split[2]);
+            YearOfCreate = int.Parse(split[3]);
         }
     }
 }

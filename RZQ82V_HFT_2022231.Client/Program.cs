@@ -11,9 +11,9 @@ namespace RZQ82V_HFT_2022231.Client
         {
             Console.WriteLine("Hello World!");
 
-            FlyingDbContext ctx = new FlyingDbContext();
-
-            var items = ctx.Planes.ToArray();
+            //FlyingDbContext ctx = new FlyingDbContext();
+            IRepository<Flight> repo = new FlightRepository(new FlyingDbContext());
+            var items = repo.ReadAll().ToArray();
             ;
         }
     }

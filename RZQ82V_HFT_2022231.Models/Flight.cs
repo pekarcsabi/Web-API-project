@@ -32,7 +32,7 @@ namespace RZQ82V_HFT_2022231.Models
         {
             string[] split = line.Split('#');
             FlightId = int.Parse(split[0]);
-            When = DateTime.Parse(split[1].Replace('#', '*'));
+            //When = DateTime.Parse(split[1].Replace('#', '*'));
             FromId = int.Parse(split[2]);
             ToId = int.Parse(split[3]);
             CompanyId = int.Parse(split[4]);

@@ -25,47 +25,49 @@ namespace RZQ82V_HFT_2022231.Repository
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Flight>(flight => flight)
-                .HasOne<Company>
+            modelBuilder.Entity<Flight>(flight => flight
+                .HasOne<Company>()
                 .WithMany()
-                .HasForeignKey(flight => flight.)
-                .OnDelete(DeleteBehavior.Cascade);
+                .HasForeignKey(flight => flight.CompanyId)
+                .OnDelete(DeleteBehavior.Cascade));
 
-            modelBuilder.Entity<Flight>()
-                .HasOne(y => y.Plane)
-                .WithMany(plane => plane.Flights)
-                .HasForeignKey(r => r.PlaneType)
-                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Flight>(flight => flight
+                .HasOne<Plane>()
+                .WithMany()
+                .HasForeignKey(flight => flight.PlaneId)
+                .OnDelete(DeleteBehavior.Cascade));
 
-            modelBuilder.Entity<Flight>()
-                .HasOne(z => z.AirPort)
-                .WithMany(airport => airport.Flights)
-                .HasForeignKey(r => r.From)
-                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Flight>(flight => flight
+                .HasOne<AirPort>()
+                .WithMany()
+                .HasForeignKey(flight => flight.FromId)
+                .OnDelete(DeleteBehavior.Cascade));
 
-            modelBuilder.Entity<Flight>()
-                .HasOne(j => j.AirPort)
-                .WithMany(airport => airport.Flights)
-                .HasForeignKey(r => r.To)
-                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Flight>(flight => flight
+                .HasOne<AirPort>()
+                .WithMany()
+                .HasForeignKey(flight => flight.ToId)
+                .OnDelete(DeleteBehavior.Cascade));
+
+
 
             modelBuilder.Entity<Plane>().HasData(new Plane[]
                 {
-                    //Type#NumOfSeats#YearOfCreate
-                    new Plane("Airbus A300#554#1992"),
-                    new Plane("Airbus A310#532#1994"),
-                    new Plane("Airbus A330#231#1999"),
-                    new Plane("Airbus A340#320#2001")
+                    //ID#Type#NumOfSeats#YearOfCreate
+                    new Plane("1#Airbus A300#554#1992"),
+                    new Plane("2#Airbus A310#532#1994"),
+                    new Plane("3#Airbus A330#231#1999"),
+                    new Plane("4#Airbus A340#320#2001")
                 });
 
             modelBuilder.Entity<Company>().HasData(new Company[]
                 {
-                    //Name#Income#NumOfPlanes
-                    new Company("easyJet#201#40"),
-                    new Company("Turkish Airlines#321#40"),
-                    new Company("WizzAir#543#31"),
-                    new Company("Flying Emirates#767#130"),
-                    new Company("RyanAir#222#22")
+                    //ID#Name#Income#NumOfPlanes
+                    new Company("1#easyJet#201#40"),
+                    new Company("2#Turkish Airlines#321#40"),
+                    new Company("3#WizzAir#543#31"),
+                    new Company("4#Flying Emirates#767#130"),
+                    new Company("5#RyanAir#222#22")
                 });
             modelBuilder.Entity<AirPort>().HasData(new AirPort[]
                 {
@@ -77,10 +79,8 @@ namespace RZQ82V_HFT_2022231.Repository
                 });
             modelBuilder.Entity<Flight>().HasData(new Flight[]
                 {
-                    //FlightId#Date*Time#From#To#CompanyName#PlaneType
-                    new Flight("1#2022*12*12#Budapest#Barcelona#WizzAir#Airbus A310"),
-                    new Flight("2#2022*12*13#London#Paris#RyanAir#Airbus A330"),
-                    new Flight("3#2022*12*14#Paris#Barcelona#easyJet#Airbus A300"),
+                    //FlightId#Date*Time#FromID#ToID#CompanyID#PlaneID
+                    new Flight("1#2022*12*12#1#2#3#2")
                 });
         }
     }

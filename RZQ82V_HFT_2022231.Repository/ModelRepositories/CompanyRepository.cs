@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace RZQ82V_HFT_2022231.Repository
+{
     public class CompanyRepository : Repository<Company>, IRepository<Company>
     {
         public CompanyRepository(FlyingDbContext ctx) : base(ctx)

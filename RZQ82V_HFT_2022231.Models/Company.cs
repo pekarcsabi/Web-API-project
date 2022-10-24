@@ -26,12 +26,13 @@ namespace RZQ82V_HFT_2022231.Models
         {
 
         }
-        public Company(string line) //Name#Income#NumOfPlanes
+        public Company(string line) //ID#Name#Income#NumOfPlanes
         {
             string[] split = line.Split('#');
-            Name = split[0];
-            Income = int.Parse(split[1]);
-            NumOfPlanes = int.Parse(split[2]);
+            CompanyId = int.Parse(split[0]);
+            Name = split[1];
+            Income = int.Parse(split[2]);
+            NumOfPlanes = int.Parse(split[3]);
         }
     }
 }
