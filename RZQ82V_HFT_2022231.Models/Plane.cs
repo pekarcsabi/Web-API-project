@@ -10,8 +10,9 @@ namespace RZQ82V_HFT_2022231.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
+        public int PlaneId { get; set; }
+        [Required]
         [StringLength(240)]
-        [Column("PlaneId")]
         public string Type { get; set; }
         [Required]
         [Range(2, 600)]

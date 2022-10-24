@@ -11,8 +11,9 @@ namespace RZQ82V_HFT_2022231.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
+        public int CompanyId { get; set; }
+        [Required]
         [StringLength(240)]
-        [Column("CompanyId")]
         public string Name { get; set; }
         [Required]
         public int Income { get; set; }
