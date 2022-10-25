@@ -25,29 +25,32 @@ namespace RZQ82V_HFT_2022231.Repository
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Flight>(flight => flight
-                .HasOne<Company>()
-                .WithMany()
-                .HasForeignKey(flight => flight.CompanyId)
-                .OnDelete(DeleteBehavior.Cascade));
+            modelBuilder.Entity<Flight>()
+                .HasOne(r => r.Company)
+                .WithMany(company => company.Flights)
+                .HasForeignKey(r => r.CompanyId)
+                .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<Flight>(flight => flight
-                .HasOne<Plane>()
-                .WithMany()
-                .HasForeignKey(flight => flight.PlaneId)
-                .OnDelete(DeleteBehavior.Cascade));
+            modelBuilder.Entity<Flight>()
+                .HasOne(r => r.Plane)
+                .WithMany(plane => plane.Flights)
+                .HasForeignKey(r => r.PlaneId)
+                .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<Flight>(flight => flight
-                .HasOne<AirPort>()
-                .WithMany()
-                .HasForeignKey(flight => flight.FromId)
-                .OnDelete(DeleteBehavior.Cascade));
+            modelBuilder.Entity<Flight>()
+                .HasOne(r => r.AirPort)
+                .WithMany(airport => airport.Flights)
+                .HasForeignKey(r => r.FromId)
+                .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<Flight>(flight => flight
-                .HasOne<AirPort>()
-                .WithMany()
-                .HasForeignKey(flight => flight.ToId)
-                .OnDelete(DeleteBehavior.Cascade));
+            modelBuilder.Entity<Flight>()
+                .HasOne(r => r.AirPort)
+                .WithMany(airport => airport.Flights)
+                .HasForeignKey(r => r.ToId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+
+            
 
 
 
@@ -80,7 +83,11 @@ namespace RZQ82V_HFT_2022231.Repository
             modelBuilder.Entity<Flight>().HasData(new Flight[]
                 {
                     //FlightId#Date*Time#FromID#ToID#CompanyID#PlaneID
-                    new Flight("1#2022*12*12#1#2#3#2")
+                    new Flight("1#2022*12*12#1#2#3#2"),
+                    new Flight("2#2022*12*12#3#4#5#3"),
+                    new Flight("3#2022*12*12#4#1#4#1"),
+                    new Flight("4#2022*12*12#3#1#1#2"),
+                    new Flight("5#2022*12*12#3#1#2#4")
                 });
         }
     }

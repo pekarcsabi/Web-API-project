@@ -16,8 +16,8 @@ namespace RZQ82V_HFT_2022231.Models
         public string Location { get; set; }
         [Required]
         public int CapacityOfPlanes { get; set; }
-        public virtual ICollection<Company> Companies { get; set; }
-        public virtual ICollection<Plane> Planes { get; set; }
+        //public virtual ICollection<Company> Companies { get; set; }
+        //public virtual ICollection<Plane> Planes { get; set; }
         public virtual ICollection<Flight> Flights { get; set; }
         public AirPort()
         {
