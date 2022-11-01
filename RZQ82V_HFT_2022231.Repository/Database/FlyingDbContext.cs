@@ -50,10 +50,6 @@ namespace RZQ82V_HFT_2022231.Repository
                 .OnDelete(DeleteBehavior.Cascade);
 
 
-            
-
-
-
             modelBuilder.Entity<Plane>().HasData(new Plane[]
                 {
                     //ID#Type#NumOfSeats#YearOfCreate
