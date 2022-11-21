@@ -21,7 +21,9 @@ namespace RZQ82V_HFT_2022231.Models
         public int YearOfCreate { get; set; }
         //public virtual ICollection<AirPort> AirPorts { get; set; }
         //public virtual ICollection<Company> Companies { get; set; }
+        [NotMapped]
         public virtual ICollection<Flight> Flights { get; set; }
+
         public Plane()
         {
 

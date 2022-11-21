@@ -18,7 +18,9 @@ namespace RZQ82V_HFT_2022231.Models
         public int CapacityOfPlanes { get; set; }
         //public virtual ICollection<Company> Companies { get; set; }
         //public virtual ICollection<Plane> Planes { get; set; }
+        [NotMapped]
         public virtual ICollection<Flight> Flights { get; set; }
+
         public AirPort()
         {
 

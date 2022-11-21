@@ -20,10 +20,13 @@ namespace RZQ82V_HFT_2022231.Models
         public int CompanyId { get; set; }
         [Required]
         public int PlaneId { get; set; }
-
+        [NotMapped]
         public virtual Plane Plane { get; private set; }
+        [NotMapped]
         public virtual AirPort AirPort { get; private set; }
-        public virtual Company Company { get; private set; } 
+        [NotMapped]
+        public virtual Company Company { get; private set; }
+
         public Flight()
         {
 
