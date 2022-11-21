@@ -16,7 +16,18 @@ namespace RZQ82V_HFT_2022231.Logic
 
         public void Create(Plane item)
         {
-            this.repo.Create(item);
+            if (item.Type.Length > 240)
+            {
+                throw new ArgumentException("Type too long");
+            }
+            else if (item.NumOfSeats < 2 || item.NumOfSeats > 600)
+            {
+                throw new ArgumentException("Incorrect number of seats");
+            }
+            else
+            {
+                this.repo.Create(item);
+            }
         }
 
         public void Delete(int id)
@@ -31,7 +42,10 @@ namespace RZQ82V_HFT_2022231.Logic
             {
                 throw new ArgumentException("Plane not exists!");
             }
-            return plane;
+            else
+            {
+                return plane;
+            }
         }
 
         public IQueryable<Plane> ReadAll()
@@ -48,7 +62,15 @@ namespace RZQ82V_HFT_2022231.Logic
 
         public int Age (int id)
         {
-            return DateTime.Today.Year - this.repo.Read(id).YearOfCreate;
+            int result = DateTime.Today.Year - this.repo.Read(id).YearOfCreate;
+            if (result < 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return result;
+            }
         }
     }
 }

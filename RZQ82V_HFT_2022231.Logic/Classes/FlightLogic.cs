@@ -31,7 +31,10 @@ namespace RZQ82V_HFT_2022231.Logic
             {
                 throw new ArgumentException("Flight not exists!");
             }
-            return flight;
+            else
+            {
+                return flight;
+            }
         }
 
         public IQueryable<Flight> ReadAll()
@@ -43,5 +46,7 @@ namespace RZQ82V_HFT_2022231.Logic
         {
             repo.Update(item);
         }
+
+        //NON CRUDS
     }
 }

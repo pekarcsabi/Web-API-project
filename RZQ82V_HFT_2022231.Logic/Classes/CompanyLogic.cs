@@ -17,7 +17,14 @@ namespace RZQ82V_HFT_2022231.Logic
 
         public void Create(Company item)
         {
-            this.repo.Create(item);
+            if (item.Name.Length < 240)
+            {
+                throw new ArgumentException("Company name too long");
+            }
+            else
+            {
+                this.repo.Create(item);
+            }
         }
 
         public void Delete(int id)
@@ -32,7 +39,10 @@ namespace RZQ82V_HFT_2022231.Logic
             {
                 throw new ArgumentException("Company not exists!");
             }
-            return company;
+            else
+            {
+                return company;
+            }
         }
 
         public IQueryable<Company> ReadAll()
@@ -48,7 +58,15 @@ namespace RZQ82V_HFT_2022231.Logic
         //NON CRUDS
         public double AvgIncome()
         {
-            return this.repo.ReadAll().Average(x => x.Income);                    
+            double result = this.repo.ReadAll().Average(x => x.Income);
+            if (result <= 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return result;
+            }        
         }
     }
 }
