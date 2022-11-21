@@ -5,7 +5,7 @@ using RZQ82V_HFT_2022231.Repository;
 
 namespace RZQ82V_HFT_2022231.Logic
 {
-    internal class AirPortLogic : IAirPortLogic
+    public class AirPortLogic : IAirPortLogic
     {
         IRepository<AirPort> repo;
 

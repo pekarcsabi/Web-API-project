@@ -28,7 +28,7 @@ namespace RZQ82V_HFT_2022231.Models
         {
 
         }
-        public Company(string line) //ID#Name#Income#NumOfPlanes
+        public Company(string line) //Id#Name#Income#NumOfPlanes
         {
             string[] split = line.Split('#');
             CompanyId = int.Parse(split[0]);

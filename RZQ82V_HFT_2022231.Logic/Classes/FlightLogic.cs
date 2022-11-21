@@ -5,7 +5,7 @@ using RZQ82V_HFT_2022231.Models;
 
 namespace RZQ82V_HFT_2022231.Logic
 {
-    internal class FlightLogic : IFlightLogic
+    public class FlightLogic : IFlightLogic
     {
         IRepository<Flight> repo;
 

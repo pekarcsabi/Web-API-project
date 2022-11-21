@@ -6,7 +6,7 @@ using RZQ82V_HFT_2022231.Repository;
 
 namespace RZQ82V_HFT_2022231.Logic
 {
-    internal class CompanyLogic : ICompanyLogic
+    public class CompanyLogic : ICompanyLogic
     {
         IRepository<Company> repo;
 
@@ -17,7 +17,7 @@ namespace RZQ82V_HFT_2022231.Logic
 
         public void Create(Company item)
         {
-            if (item.Name.Length < 240)
+            if (item.Name.Length > 240)
             {
                 throw new ArgumentException("Company name too long");
             }
