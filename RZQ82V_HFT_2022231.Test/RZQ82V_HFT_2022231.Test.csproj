@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+    <PackageReference Include="NUnit" Version="3.13.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\RZQ82V_HFT_2022231.Logic\RZQ82V_HFT_2022231.Logic.csproj" />
     <ProjectReference Include="..\RZQ82V_HFT_2022231.Models\RZQ82V_HFT_2022231.Models.csproj" />
     <ProjectReference Include="..\RZQ82V_HFT_2022231.Repository\RZQ82V_HFT_2022231.Repository.csproj" />
