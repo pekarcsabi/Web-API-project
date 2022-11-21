@@ -43,5 +43,12 @@ namespace RZQ82V_HFT_2022231.Logic
         {
             this.repo.Update(item);
         }
+
+        //NON CURDS
+
+        public int Age (int id)
+        {
+            return DateTime.Today.Year - this.repo.Read(id).YearOfCreate;
+        }
     }
 }

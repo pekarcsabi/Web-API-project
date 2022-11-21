@@ -43,5 +43,13 @@ namespace RZQ82V_HFT_2022231.Logic
         {
             repo.Update(item);
         }
+
+        //NON CRUDS
+        public IQueryable NumOfFlights (DateTime day)
+        {
+            var result = from x in this.repo.ReadAll()
+                         select x.Flights.Count();
+            return result;
+        }
     }
 }

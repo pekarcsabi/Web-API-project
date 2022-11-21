@@ -44,5 +44,11 @@ namespace RZQ82V_HFT_2022231.Logic
         {
             this.repo.Update(item);
         }
+
+        //NON CRUDS
+        public double AvgIncome()
+        {
+            return this.repo.ReadAll().Average(x => x.Income);                    
+        }
     }
 }
