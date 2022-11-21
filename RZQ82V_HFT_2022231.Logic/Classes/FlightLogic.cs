@@ -48,5 +48,24 @@ namespace RZQ82V_HFT_2022231.Logic
         }
 
         //NON CRUDS
+        public IQueryable FilghtNumberPerYear()
+        {
+            var flights = repo.ReadAll();
+
+            var result = from x in flights
+                         group x by x.When.Year into g
+                         select new YearInfo()
+                         {
+                             Year = g.Key,
+                             Count = g.Count()
+                         };
+
+            return result;
+        }
+        public class YearInfo
+        {
+            public int Year { get; set; }
+            public int Count { get; set; }
+        }
     }
 }

@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace RZQ82V_HFT_2022231.Test
 {
     [TestFixture]
-    public class CompanyLogicTest
+    public class CompanyLogicTester
     {
         CompanyLogic logic;
         Mock<IRepository<Company>> mockPlaneRepo;

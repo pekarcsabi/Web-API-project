@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RZQ82V_HFT_2022231.Logic\RZQ82V_HFT_2022231.Logic.csproj" />
     <ProjectReference Include="..\RZQ82V_HFT_2022231.Models\RZQ82V_HFT_2022231.Models.csproj" />
     <ProjectReference Include="..\RZQ82V_HFT_2022231.Repository\RZQ82V_HFT_2022231.Repository.csproj" />
   </ItemGroup>

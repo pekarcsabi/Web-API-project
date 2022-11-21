@@ -25,7 +25,7 @@ namespace RZQ82V_HFT_2022231.Models
         {
 
         }
-        public AirPort(string line) //ID#Location#CapacityOfPlanes
+        public AirPort(string line) //Id#Location#CapacityOfPlanes
         {
             string[] split = line.Split('#');
             AirPortId = int.Parse(split[0]);

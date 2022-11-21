@@ -80,9 +80,9 @@ namespace RZQ82V_HFT_2022231.Repository
                 {
                     //FlightId#Date*Time#FromID#ToID#CompanyID#PlaneID
                     new Flight("1#2022*12*12#1#2#3#2"),
-                    new Flight("2#2022*12*12#3#4#5#3"),
+                    new Flight("2#2012*12*12#3#4#5#3"),
                     new Flight("3#2022*12*12#4#1#4#1"),
-                    new Flight("4#2022*12*12#3#1#1#2"),
+                    new Flight("4#2002*12*12#3#1#1#2"),
                     new Flight("5#2022*12*12#3#1#2#4")
                 });
         }
