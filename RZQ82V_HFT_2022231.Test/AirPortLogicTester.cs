@@ -57,5 +57,15 @@ namespace RZQ82V_HFT_2022231.Test
             }
             mockPlaneRepo.Verify(r => r.Create(airport), Times.Never);
         }
+
+        [Test]
+        public void LargestAirPortTest()
+        {
+            var result = logic.LargestAirPort();
+
+            var expected = new AirPort("4#TestIV#40");
+
+            Assert.That(expected, Is.EqualTo(result));
+        }
     }
 }

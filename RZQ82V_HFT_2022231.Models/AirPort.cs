@@ -32,5 +32,22 @@ namespace RZQ82V_HFT_2022231.Models
             Location = split[1];
             CapacityOfPlanes = int.Parse(split[2]);
         }
+        public override bool Equals(object obj)
+        {
+            AirPort b = obj as AirPort;
+            if (b == null)
+            {
+                return false;
+            }
+            else
+            {
+                return this.AirPortId == b.AirPortId && this.CapacityOfPlanes == b.CapacityOfPlanes
+                    && this.Flights == b.Flights && this.Location == b.Location;
+            }
+        }
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(this.AirPortId, this.Location, this.CapacityOfPlanes, this.Flights)
+        }
     }
 }

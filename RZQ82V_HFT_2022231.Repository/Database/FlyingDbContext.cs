@@ -74,16 +74,20 @@ namespace RZQ82V_HFT_2022231.Repository
                     new AirPort("1#Budapest#10"),
                     new AirPort("2#Barcelona#20"),
                     new AirPort("3#London#30"),
-                    new AirPort("4#Paris#40")
+                    new AirPort("4#Paris#40"),
+                    new AirPort("5#Berlin#60"),
+                    new AirPort("6#Róma#30"),
+                    new AirPort("7#Moszkva#40"),
+                    new AirPort("8#Athén#20")
                 });
             modelBuilder.Entity<Flight>().HasData(new Flight[]
                 {
                     //FlightId#Date*Time#FromID#ToID#CompanyID#PlaneID
                     new Flight("1#2022*12*12#1#2#3#2"),
                     new Flight("2#2012*12*12#3#4#5#3"),
-                    new Flight("3#2022*12*12#4#1#4#1"),
-                    new Flight("4#2002*12*12#3#1#1#2"),
-                    new Flight("5#2022*12*12#3#1#2#4")
+                    new Flight("3#2022*12*12#4#5#4#1"),
+                    new Flight("4#2002*12*12#6#7#1#2"),
+                    new Flight("5#2022*12*12#8#9#2#4")
                 });
         }
     }

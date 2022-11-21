@@ -55,10 +55,11 @@ namespace RZQ82V_HFT_2022231.Logic
         }
 
         //NON CRUDS
-        public IQueryable NumOfFlights (DateTime day)
+        public AirPort LargestAirPort ()
         {
-            var result = from x in this.repo.ReadAll()
-                         select x.Flights.Count();
+            var max = this.repo.ReadAll().Max(x => x.CapacityOfPlanes);
+            var result = this.repo.ReadAll().First(x => x.CapacityOfPlanes == max);
+                         
             return result;
         }
     }

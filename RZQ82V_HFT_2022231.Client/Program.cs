@@ -3,6 +3,7 @@ using RZQ82V_HFT_2022231.Models;
 using RZQ82V_HFT_2022231.Repository;
 using System;
 using System.Linq;
+using static RZQ82V_HFT_2022231.Logic.AirPortLogic;
 
 namespace RZQ82V_HFT_2022231.Client
 {
@@ -24,13 +25,8 @@ namespace RZQ82V_HFT_2022231.Client
 
 
 
-            //var proba = new AirPort("5#PROBA#1");
-
-            //arepo.Create(proba);
-
-            var asd = flogic.FilghtNumberPerYear();
-
-            var age = plogic.Age(5);
+            var asd = alogic.LargestAirPort();
+            
 
             ;
         }
