@@ -25,8 +25,9 @@ namespace RZQ82V_HFT_2022231.Test
                 new Plane("1#TestTypeI#10#2002"),
                 new Plane("2#TestTypeII#20#2010"),
                 new Plane("3#TestTypeIII#601#2022"),
-                new Plane("4#TestTypeIV#100#3012")
+                new Plane("4#TestTypeIV#100#2012")
             }.AsQueryable());
+            mockPlaneRepo.Setup(m => m.Read(It.IsAny<int>())).Returns(new Plane("1#TestTypeIV#100#3012"));
             logic = new PlaneLogic(mockPlaneRepo.Object);
         }
 
@@ -72,15 +73,15 @@ namespace RZQ82V_HFT_2022231.Test
             mockPlaneRepo.Verify(r => r.Create(plane), Times.Never);
         }
 
-        //[Test]
-        //public void AgePlaneTestIncorrect()
-        //{
-        //    var plane = new Plane("4#TestTypeIV#100#3012");
+        [Test]
+        public void AgePlaneTestIncorrect()
+        {
+            var result = logic.Age(1);
+            
+            int expected = 0;
 
-        //    var result = logic.Age(4);
-        //    int expected = 0;
+            Assert.That(result, Is.EqualTo(expected));
 
-        //    Assert.That(result, Is.EqualTo(expected));
-        //}
+        }
     }
 }

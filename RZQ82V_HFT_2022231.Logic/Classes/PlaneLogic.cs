@@ -62,7 +62,8 @@ namespace RZQ82V_HFT_2022231.Logic
 
         public int Age (int id)
         {
-            int result = DateTime.Today.Year - this.repo.Read(id).YearOfCreate;
+            var plane = this.repo.Read(id);
+            int result = DateTime.Today.Year - plane.YearOfCreate;
             if (result < 0)
             {
                 return 0;
