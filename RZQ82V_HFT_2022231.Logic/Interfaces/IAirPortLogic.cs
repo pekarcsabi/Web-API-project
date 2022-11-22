@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace RZQ82V_HFT_2022231.Logic
 {
-    internal interface IAirPortLogic
+    public interface IAirPortLogic
     {
         void Create(AirPort item);
         void Delete(int id);

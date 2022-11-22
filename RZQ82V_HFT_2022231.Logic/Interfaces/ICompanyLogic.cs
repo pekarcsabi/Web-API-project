@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace RZQ82V_HFT_2022231.Logic
 {
-    internal interface ICompanyLogic
+    public interface ICompanyLogic
     {
         void Create(Company item);
         void Delete(int id);
