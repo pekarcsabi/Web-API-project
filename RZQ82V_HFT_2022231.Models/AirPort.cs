@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace RZQ82V_HFT_2022231.Models
 {
@@ -19,6 +20,7 @@ namespace RZQ82V_HFT_2022231.Models
         //public virtual ICollection<Company> Companies { get; set; }
         //public virtual ICollection<Plane> Planes { get; set; }
         [NotMapped]
+        [JsonIgnore]
         public virtual ICollection<Flight> Flights { get; set; }
 
         public AirPort()

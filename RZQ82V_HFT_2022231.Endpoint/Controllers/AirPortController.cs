@@ -12,35 +12,35 @@ namespace RZQ82V_HFT_2022231.Endpoint.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class CompanyController : ControllerBase
+    public class AirPortController : ControllerBase
     {
-        ICompanyLogic logic;
+        IAirPortLogic logic;
 
-        public CompanyController(ICompanyLogic logic)
+        public AirPortController(IAirPortLogic logic)
         {
             this.logic = logic;
         }
 
         [HttpGet]
-        public IEnumerable<Company> ReadAll()
+        public IEnumerable<AirPort> ReadAll()
         {
             return this.logic.ReadAll();
         }
 
         [HttpGet("{id}")]
-        public Company Read(int id)
+        public AirPort Read(int id)
         {
             return this.logic.Read(id);
         }
 
         [HttpPost]
-        public void Create([FromBody] Company value)
+        public void Create([FromBody] AirPort value)
         {
             this.logic.Create(value);
         }
 
         [HttpPut]
-        public void Update([FromBody] Company value)
+        public void Update([FromBody] AirPort value)
         {
             this.logic.Update(value);
         }

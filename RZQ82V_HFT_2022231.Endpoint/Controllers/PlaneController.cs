@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RZQ82V_HFT_2022231.Endpoint.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class PlaneController : ControllerBase
     {
