@@ -82,7 +82,7 @@ namespace RZQ82V_HFT_2022231.Repository
                 });
             modelBuilder.Entity<Flight>().HasData(new Flight[]
                 {
-                    //FlightId#Date*Time#FromID#ToID#CompanyID#PlaneID
+                    //Flight Id#Date*Time#FromID#ToID#CompanyID#PlaneID
                     new Flight("1#2022*12*12#1#2#3#2"),
                     new Flight("2#2012*12*12#3#4#5#3"),
                     new Flight("3#2022*12*12#4#5#4#1"),

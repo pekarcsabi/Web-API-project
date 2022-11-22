@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static RZQ82V_HFT_2022231.Logic.CompanyLogic;
 
 namespace RZQ82V_HFT_2022231.Test
 {
