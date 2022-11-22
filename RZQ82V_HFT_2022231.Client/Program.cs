@@ -25,7 +25,9 @@ namespace RZQ82V_HFT_2022231.Client
 
 
 
-            var asd = alogic.LargestAirPort();
+            var asd = flogic.FilghtNumberPerYear();
+
+            var dsa = flogic.FlightNumberOfBiggestCompany();
             
 
             ;

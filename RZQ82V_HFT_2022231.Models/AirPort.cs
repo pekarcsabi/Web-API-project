@@ -47,7 +47,7 @@ namespace RZQ82V_HFT_2022231.Models
         }
         public override int GetHashCode()
         {
-            return HashCode.Combine(this.AirPortId, this.Location, this.CapacityOfPlanes, this.Flights)
+            return HashCode.Combine(this.AirPortId, this.Location, this.CapacityOfPlanes, this.Flights);
         }
     }
 }

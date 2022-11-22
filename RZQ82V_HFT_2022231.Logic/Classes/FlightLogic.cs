@@ -62,10 +62,64 @@ namespace RZQ82V_HFT_2022231.Logic
 
             return result;
         }
+
+        public CompanyInfo FlightNumberOfBiggestCompany()
+        {
+            var flight = repo.ReadAll();
+            var max = flight.Max(x => x.Company.NumOfPlanes);
+            var result = flight.First(x => x.Company.NumOfPlanes == max);
+
+            CompanyInfo companyinfo = new CompanyInfo();
+            companyinfo.Name = result.Company.Name;
+            companyinfo.FlightCount = result.Company.Flights.Count();
+
+            return companyinfo;
+        }
+
+
         public class YearInfo
         {
             public int Year { get; set; }
             public int Count { get; set; }
+
+            public override bool Equals(object obj)
+            {
+                YearInfo b = obj as YearInfo;
+                if (b == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return this.Count == b.Count && this.Year == b.Year;
+                }
+            }
+            public override int GetHashCode()
+            {
+                return HashCode.Combine(this.Year, this.Count);
+            }
+        }
+        public class CompanyInfo
+        {
+            public string Name { get; set; }
+            public int FlightCount { get; set; }
+
+            public override bool Equals(object obj)
+            {
+                CompanyInfo b = obj as CompanyInfo;
+                if (b == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return this.Name == b.Name && this.FlightCount == b.FlightCount;
+                }
+            }
+            public override int GetHashCode()
+            {
+                return HashCode.Combine(this.Name, this.FlightCount);
+            }
         }
     }
 }

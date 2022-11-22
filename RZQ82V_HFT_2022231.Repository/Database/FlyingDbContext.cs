@@ -86,7 +86,7 @@ namespace RZQ82V_HFT_2022231.Repository
                     new Flight("1#2022*12*12#1#2#3#2"),
                     new Flight("2#2012*12*12#3#4#5#3"),
                     new Flight("3#2022*12*12#4#5#4#1"),
-                    new Flight("4#2002*12*12#6#7#1#2"),
+                    new Flight("4#2002*12*12#6#7#4#2"),
                     new Flight("5#2022*12*12#8#9#2#4")
                 });
         }
