@@ -1,4 +1,5 @@
 ﻿using ConsoleTools;
+using static RZQ82V_HFT_2022231.Logic.FlightLogic;
 using RZQ82V_HFT_2022231.Models;
 using System;
 using System.Collections.Generic;
@@ -177,15 +178,74 @@ namespace RZQ82V_HFT_2022231.Client
             }
         }
         
+        static void Age()
+        {
+            Console.Write("Enter a Plane id to get the Plane's age: ");
+            int id = int.Parse(Console.ReadLine());
+            var result = rest.GetSingle<int>($"PlaneNonCrud/Age/{id}");
+            Console.WriteLine("Age: " + result);
+            Console.ReadLine();
+        }
+
+        static void LargestAirPort()
+        {
+            var result = rest.GetSingle<AirPort>("AirPortNonCrud/LargestAirPort");
+            Console.Write("The Largest AirPort: " + result.Location);
+            Console.ReadLine();
+        }
+
+        static void AverageIncome()
+        {
+            var result = rest.GetSingle<double>("CompanyNonCrud/AverageIncome");
+            Console.WriteLine("Companies Average Income: " + Math.Round(result,2) + "M $");
+            Console.ReadLine();
+        }
+
+        static void FlightNumberPerYear()
+        {
+            var result = rest.GetSingle<List<YearInfo>>("FlightNonCrud/FilghtNumberPerYear");
+            foreach (var item in result)
+            {
+                Console.WriteLine("In " + item.Year + ": " + item.Count + "Db");
+            }
+            Console.ReadLine();
+        }
+
+        static void MostPupuarSeasonToTravel()
+        {
+            var result = rest.GetSingle<SeasonInfo>("FlightNonCrud/MostPupuarSeasonToTravel");
+            Console.WriteLine("The Most Popular Seasoon For Traveling: " + result.Name);
+            Console.WriteLine("Number Of Flights In This Season: " + result.Count);
+            Console.ReadLine();
+        }
+
         static void Main(string[] args)
         {
             rest = new RestService("http://localhost:63610/", "flight");
+
+            var planeQuerries = new ConsoleMenu(args, level: 2)
+                .Add("Age Of Plane", () => Age())
+                .Add("Exit", ConsoleMenu.Close);
+
+            var airportQuerries = new ConsoleMenu(args, level: 2)
+                .Add("Largest AirPort", () => LargestAirPort())
+                .Add("Exit", ConsoleMenu.Close);
+
+            var companyQuerries = new ConsoleMenu(args, level: 2)
+                .Add("Average Income", () => AverageIncome())
+                .Add("Exit", ConsoleMenu.Close);
+
+            var flightQuerries = new ConsoleMenu(args, level: 2)
+               .Add("Flight Number In Years", () => FlightNumberPerYear())
+               .Add("The Busiest Season", () => MostPupuarSeasonToTravel())
+               .Add("Exit", ConsoleMenu.Close);
 
             var planeSubMenu = new ConsoleMenu(args, level: 1)
                 .Add("List", () => List("Plane"))
                 .Add("Create", () => Create("Plane"))
                 .Add("Update", () => Update("Plane"))
                 .Add("Delete", () => Delete("Plane"))
+                .Add("Plane Querries", () => planeQuerries.Show())
                 .Add("Exit", ConsoleMenu.Close);
 
             var companySubMenu = new ConsoleMenu(args, level: 1)
@@ -193,6 +253,7 @@ namespace RZQ82V_HFT_2022231.Client
                 .Add("Create", () => Create("Company"))
                 .Add("Update", () => Update("Company"))
                 .Add("Delete", () => Delete("Company"))
+                .Add("Company Querries", () => companyQuerries.Show())
                 .Add("Exit", ConsoleMenu.Close);
 
             var airportSubMenu = new ConsoleMenu(args, level: 1)
@@ -200,6 +261,7 @@ namespace RZQ82V_HFT_2022231.Client
                 .Add("Create", () => Create("AirPort"))
                 .Add("Update", () => Update("AirPort"))
                 .Add("Delete", () => Delete("AirPort"))
+                .Add("AirPort Querries", () => airportQuerries.Show())
                 .Add("Exit", ConsoleMenu.Close);
 
             var flightSubMenu = new ConsoleMenu(args, level: 1)
@@ -207,6 +269,7 @@ namespace RZQ82V_HFT_2022231.Client
                 .Add("Create", () => Create("Flight"))
                 .Add("Update", () => Update("Flight"))
                 .Add("Delete", () => Delete("Flight"))
+                .Add("Flight Querries", () => flightQuerries.Show())
                 .Add("Exit", ConsoleMenu.Close);
 
             var menu = new ConsoleMenu(args, level: 0)

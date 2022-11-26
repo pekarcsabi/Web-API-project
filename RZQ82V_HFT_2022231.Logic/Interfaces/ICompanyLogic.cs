@@ -10,5 +10,6 @@ namespace RZQ82V_HFT_2022231.Logic
         Company Read(int id);
         IQueryable<Company> ReadAll();
         void Update(Company item);
+        double AvgIncome();
     }
 }

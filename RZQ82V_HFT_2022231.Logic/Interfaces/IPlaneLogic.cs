@@ -10,5 +10,6 @@ namespace RZQ82V_HFT_2022231.Logic
         Plane Read(int id);
         IQueryable<Plane> ReadAll();
         void Update(Plane item);
+        int Age(int id);
     }
 }

@@ -10,5 +10,6 @@ namespace RZQ82V_HFT_2022231.Logic
         AirPort Read(int id);
         IQueryable<AirPort> ReadAll();
         void Update(AirPort item);
+        AirPort LargestAirPort();
     }
 }
