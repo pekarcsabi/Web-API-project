@@ -16,7 +16,7 @@ namespace RZQ82V_HFT_2022231.Logic
 
         public void Create(Plane item)
         {
-            if (item.Type.Length > 240)
+            if (item.Name.Length > 240)
             {
                 throw new ArgumentException("Type too long");
             }

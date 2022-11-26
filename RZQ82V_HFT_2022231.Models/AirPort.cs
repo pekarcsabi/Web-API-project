@@ -21,7 +21,10 @@ namespace RZQ82V_HFT_2022231.Models
         //public virtual ICollection<Plane> Planes { get; set; }
         [NotMapped]
         [JsonIgnore]
-        public virtual ICollection<Flight> Flights { get; set; }
+        public virtual ICollection<Flight> FromFlights { get; set; }
+        [NotMapped]
+        [JsonIgnore]
+        public virtual ICollection<Flight> ToFlights { get; set; }
 
         public AirPort()
         {
@@ -44,12 +47,12 @@ namespace RZQ82V_HFT_2022231.Models
             else
             {
                 return this.AirPortId == b.AirPortId && this.CapacityOfPlanes == b.CapacityOfPlanes
-                    && this.Flights == b.Flights && this.Location == b.Location;
+                    && this.ToFlights == b.ToFlights && this.FromFlights == b.FromFlights && this.Location == b.Location;
             }
         }
         public override int GetHashCode()
         {
-            return HashCode.Combine(this.AirPortId, this.Location, this.CapacityOfPlanes, this.Flights);
+            return HashCode.Combine(this.AirPortId, this.Location, this.CapacityOfPlanes, this.FromFlights, this.ToFlights);
         }
     }
 }

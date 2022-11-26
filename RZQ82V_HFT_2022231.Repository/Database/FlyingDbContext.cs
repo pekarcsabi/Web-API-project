@@ -19,8 +19,8 @@ namespace RZQ82V_HFT_2022231.Repository
             if (!builder.IsConfigured)
             {
                 builder
-                .UseInMemoryDatabase("flyingDB")
-                .UseLazyLoadingProxies();
+                    .UseLazyLoadingProxies()
+                    .UseInMemoryDatabase("flyingDB");
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -38,21 +38,20 @@ namespace RZQ82V_HFT_2022231.Repository
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Flight>()
-                .HasOne(r => r.AirPort)
-                .WithMany(airport => airport.Flights)
+                .HasOne(r => r.FromAirPort)
+                .WithMany(airport => airport.FromFlights)
                 .HasForeignKey(r => r.FromId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Flight>()
-                .HasOne(r => r.AirPort)
-                .WithMany(airport => airport.Flights)
+                .HasOne(r => r.ToAirPort)
+                .WithMany(airport => airport.ToFlights)
                 .HasForeignKey(r => r.ToId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-
             modelBuilder.Entity<Plane>().HasData(new Plane[]
                 {
-                    //ID#Type#NumOfSeats#YearOfCreate
+                    //Type#NumOfSeats#YearOfCreate
                     new Plane("1#Airbus A300#554#1992"),
                     new Plane("2#Airbus A310#532#1994"),
                     new Plane("3#Airbus A330#231#1999"),

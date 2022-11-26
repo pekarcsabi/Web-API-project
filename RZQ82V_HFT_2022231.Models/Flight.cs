@@ -23,7 +23,9 @@ namespace RZQ82V_HFT_2022231.Models
         [NotMapped]
         public virtual Plane Plane { get; private set; }
         [NotMapped]
-        public virtual AirPort AirPort { get; private set; }
+        public virtual AirPort FromAirPort { get; private set; }
+        [NotMapped]
+        public virtual AirPort ToAirPort { get; private set; }
         [NotMapped]
         public virtual Company Company { get; private set; }
 
